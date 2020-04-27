@@ -1,9 +1,22 @@
 $("#getPrintJobs").on("click", function() {
-    console.log("#getPrintJobs works!")
+    console.log("#getPrintJobs works!");
+    const accessToken = sessionStorage.getItem("accessToken");
+    console.log(accessToken);
+    $.ajax("https://api.sandbox.lulu.com/print-jobs/", {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer " + accessToken
+        }, 
+        error: function(data) {
+            console.log(data)
+        }
+    }).then(function(data) {
+        console.log(data);
+    })
 });
 
 $("#getToken").on("click", function() {
-    console.log("#getToken works!")
+    console.log("#getToken works!");
     const now = new Date();
     const unixTimestamp = now.getTime();
     $.ajax("/get-token", {
