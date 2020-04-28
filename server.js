@@ -4,6 +4,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(express.static('public'))
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
@@ -16,6 +18,23 @@ app.post('/get-token', (req, res) => {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Basic ' + process.env.AUTH_CODE
+        }
+    }).then(function(response) {
+        res.json(response.data);
+    }).catch(function(error) {
+        console.log(error);
+    })
+})
+
+app.post('/refresh-token', (req, res) => {
+    console.log(req.body);
+    axios({
+        url: "https://api.sandbox.lulu.com/auth/realms/glasstree/protocol/openid-connect/token",
+        method: "post",
+        data: "grant_type=client_credentials&refresh_token=" + req.body.refresh_token,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": "Basic " + process.env.AUTH_CODE
         }
     }).then(function(response) {
         res.json(response.data);

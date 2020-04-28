@@ -7,8 +7,8 @@ $("#getPrintJobs").on("click", function() {
         headers: {
             Authorization: "Bearer " + accessToken
         }, 
-        error: function(data) {
-            console.log(data)
+        error: function(error) {
+            console.log(error)
         }
     }).then(function(data) {
         console.log(data);
@@ -36,6 +36,23 @@ $("#getToken").on("click", function() {
         for (const property in token) {
             sessionStorage.setItem(property, token[property])
         }
+    })
+})
+
+$("#useRefreshToken").on("click", function() {
+    console.log("#useRefreshToken works!");
+    const refreshToken = sessionStorage.getItem("refreshToken");
+    $.ajax("/refresh-token", {
+        method: "POST",
+        data: "grant_type=refresh_token&refresh_token=" + refreshToken,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        error: function(error) {
+            console.log(error)
+        }
+    }).then(function(data) {
+        console.log(data)
     })
 })
 
