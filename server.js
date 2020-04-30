@@ -1,16 +1,16 @@
-require('dotenv').config()
+require('dotenv').config();
 const axios = require('axios');
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-app.use(express.static('public'))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
-app.post('/get-token', (req, res) => {
+app.post('/api/access-token', (req, res) => {
     axios({
         url: "https://api.sandbox.lulu.com/auth/realms/glasstree/protocol/openid-connect/token",
         method: "post",
@@ -24,14 +24,14 @@ app.post('/get-token', (req, res) => {
     }).catch(function(error) {
         console.log(error);
     })
-})
+});
 
-app.post('/refresh-token', (req, res) => {
-    console.log(req.body);
+app.post('/api/refresh-token', (req, res) => {
+    const refreshToken = req.body.refresh_token;
     axios({
         url: "https://api.sandbox.lulu.com/auth/realms/glasstree/protocol/openid-connect/token",
         method: "post",
-        data: "grant_type=client_credentials&refresh_token=" + req.body.refresh_token,
+        data: "grant_type=client_credentials&refresh_token=" + refreshToken,
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Basic " + process.env.AUTH_CODE
@@ -41,7 +41,7 @@ app.post('/refresh-token', (req, res) => {
     }).catch(function(error) {
         console.log(error);
     })
-})
+});
 
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
 
