@@ -4,12 +4,12 @@ body {
     /* font-family: 'Black Han Sans', sans-serif; */
 }
 
-header h1 {
+h1 {
     padding: 0;
-    margin: 1.4rem 0 0 0;
+    margin: 0;
 }
 
-header h1 span {
+h1 span {
     font-weight: 700;
     letter-spacing: -0.20rem;
 }
@@ -20,4 +20,44 @@ header h1 span {
 
 .social i {
     padding-right: .50rem;
+    color: black;
+}
+
+.social i:hover,
+.social i:focus {
+    color: rgba(0, 0, 0, .6);
+}   
+
+.hero {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.2)), url("/images/brett-zeck-eyfMgGvo9PA-unsplash-xl.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-rop: 2px solid rgba(0,0,0,.3);
+    height: 100vh;
+    padding: 2rem 0;
+}
+
+img.img-fluid {
+    max-width: 440px;
+    width: 100%;
+}
+
+.heroText {
+    /* background: rgba(0, 0, 0, .5); */
+    /* max-width: 60%; */
+    padding: 2rem 0;
+}
+
+code {
+    background: white;
+    padding: 0 .20rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        min-width: 100%;
+        width: 100%;
+    }
 }
