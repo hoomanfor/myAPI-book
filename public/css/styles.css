@@ -1,0 +1,23 @@
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    /* font-family: 'Black Han Sans', sans-serif; */
+}
+
+header h1 {
+    padding: 0;
+    margin: 1.4rem 0 0 0;
+}
+
+header h1 span {
+    font-weight: 700;
+    letter-spacing: -0.20rem;
+}
+
+.social {
+    font-size: 1.4rem;
+}
+
+.social i {
+    padding-right: .50rem;
+}

@@ -1,17 +1,17 @@
 $(document).ready(function() {
     console.log("ready!");
-    checkToken();
+    // setToken();
 });
 
 
-function checkToken() {
+function setToken() {
     const now = new Date();
     const unixTimestamp = now.getTime();
     const accessToken = sessionStorage.getItem("accessToken");
     const accessTokenExpireTimestamp = Number(sessionStorage.getItem("accessTokenExpireTimestamp"));
     const refreshTokenExpireTimestamp = Number(sessionStorage.getItem("refreshTokenExpireTimestamp"));
     if (!accessToken || (unixTimestamp > refreshTokenExpireTimestamp)) {
-        return getAccessToken();
+        return newAccessToken();
     } else if (accessToken && (unixTimestamp < accessTokenExpireTimestamp)) {
         return accessToken;
     } else if (accessToken && (unixTimestamp > accessTokenExpireTimestamp) && (unixTimestamp < refreshTokenExpireTimestamp)) {
@@ -19,8 +19,8 @@ function checkToken() {
     }
 }
 
-function getAccessToken() {
-    console.log("getAccessToken()")
+function newAccessToken() {
+    console.log("newAccessToken()")
     const now = new Date();
     const unixTimestamp = now.getTime();
     $.ajax("/api/access-token", {
@@ -42,6 +42,7 @@ function getAccessToken() {
         for (const property in token) {
             sessionStorage.setItem(property, token[property])
         }
+        return sessionStorage.getItem("refreshToken");
     })
 }
 
@@ -73,13 +74,13 @@ function useRefreshToken() {
         for (const property in token) {
             sessionStorage.setItem(property, token[property])
         }
+        return sessionStorage.getItem("refreshToken");
     })
 }
 
 $("#getPrintJobs").on("click", function() {
     console.log("#getPrintJobs works!");
-    const accessToken = sessionStorage.getItem("accessToken");
-    console.log(accessToken);
+    const accessToken = setToken();
     $.ajax("https://api.sandbox.lulu.com/print-jobs/", {
         method: "GET",
         headers: {
