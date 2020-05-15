@@ -35,7 +35,7 @@ h1 span {
     background-repeat: no-repeat;
     background-size: cover;
     border-rop: 2px solid rgba(0,0,0,.3);
-    height: 100vh;
+    height: 100%;
     padding: 2rem 0;
 }
 
@@ -53,6 +53,10 @@ img.img-fluid {
 code {
     background: white;
     padding: 0 .20rem;
+}
+
+.checkout {
+    padding: 2rem 0;
 }
 
 @media only screen and (max-width: 767px) {

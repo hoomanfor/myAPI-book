@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Josefin+Sans:400,700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Stripe CSS -->
+    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
+    <!-- <link rel="stylesheet" href="/css/global.css" /> -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <title>myAPI Book</title>
+  </head>
+  <body class="bg-light">
+
+    <header class="container px-0 px-md-2">
+      <div class="row text-center no-gutters">
+        <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
+          <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
+          <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="col-12 col-md-6 pt-1">
+          <h1>my<span>API</span> book</h1>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-center">
+          <a class="btn btn-primary w-100 pay">Buy the Book Now</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container checkout">
+  
+        <div class="row">
+          <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Your cart</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">myAPI book</h6>
+                  <small class="text-muted">Brief description of myAPI book</small>
+                </div>
+                <div>
+                  <input type="number" id="quantity" placeholder="1" name="quantity" min="1" max="100">
+                  <span>x</span>
+                  <span class="text-muted">$12</span>
+                </div>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$20</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Shipping address</h4>
+            <form class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="form-group col-md-6 mb-3">
+                  <label for="firstName">First name</label>
+                  <input type="text" class="form-control" id="firstName" required>
+                  <div id="firstName-invalid-feedback" class="invalid-feedback">
+                    This field is required.
+                  </div>
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                  <label for="lastName">Last name</label>
+                  <input type="text" class="form-control" id="lastName" required>
+                  <div id="lastName-invalid-feedback" class="invalid-feedback">
+                    This field is required.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-group mb-3">
+                <label for="organization">Organization <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="organization" pattern=".{1,30}">
+                <div class="invalid-feedback">
+                  Organization cannot be greater than 30 characters.
+                </div>
+              </div>
+  
+              <div class="form-group mb-3">
+                <label for="address1">Address</label>
+                <input type="text" class="form-control" id="address1" placeholder="1234 Main St" required>
+                <div id="address1-invalid-feedback" class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+  
+              <div class="form-group mb-3">
+                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" pattern=".{1,30}">
+                <div class="invalid-feedback">
+                  Address 2 cannot be greater than 30 characters.
+                </div>
+              </div>
+  
+              <div class="form-row">
+                <div class="col-md-5 mb-3">
+                  <label for="country">Country</label>
+                  <select class="custom-select d-block w-100" id="country" required>
+                    <option value="">Choose...</option>
+                    <option>United States</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="state">State</label>
+                  <select class="custom-select d-block w-100" id="state" required>
+                    <option value="">Choose...</option>
+                    <option>California</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="zip">Zip</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6 mb-4">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="contact_email" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                  <label for="contact_phone">Phone</label>
+                  <input type="number" class="form-control" id="contact_phone" placeholder="e.g. 919-518-0375" pattern="[+]\d{2}[(]\d{2}[)]\d{4}[-]\d{4}}" required>
+                  <div class="invalid-feedback">
+                    Please enter a phone number to assist with delivery.
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+              
+            </form>
+          </div>
+        </div>
+        
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+          <p class="mb-1">&copy; 2020 myAPI book</p> 
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+          </ul>
+        </footer>
+      </div>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/javascript/logic.js"></script>
+  </body>
+</html>
