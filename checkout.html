@@ -71,6 +71,7 @@
           </div>
 
           <div class="col-md-8 order-md-1">
+
             <h4 class="mb-3">Shipping address</h4>
             <form class="needs-validation" novalidate>
               <div class="form-row">
@@ -117,7 +118,7 @@
               <div class="form-row mb-3">
                 <div class="col-md-6">
                   <label for="city">City</label>
-                  <input type="text" class="custom-select d-block w-100" id="city" required>
+                  <input type="text" class="form-control" id="city" required>
                   <div class="invalid-feedback">
                     Please enter a city.
                   </div>
@@ -220,16 +221,38 @@
                 </div>
               </div>
 
-              <hr>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address">
+              <div class="custom-control custom-checkbox mb-4">
+                <input type="checkbox" class="custom-control-input" id="same-address" checked>
                 <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
               </div>
-              <hr class="mb-4">
+
+              <!-- Billing Address -->
+              <div id="billing-address" class="row d-none">
+                <div class="col">
+                  <h4 class="mb-3">Billing address</h4>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="ba-firstName">First name</label>
+                      <input type="text" class="form-control" id="ba-firstName" required>
+                      <div id="ba-firstName-invalid-feedback" class="invalid-feedback">
+                        This field is required.
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="ba-lastName">Last name</label>
+                      <input type="text" class="form-control" id="ba-lastName" required>
+                      <div id="ba-lastName-invalid-feedback" class="invalid-feedback">
+                        This field is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <button type="submit" class="btn btn-primary">Submit</button>
               
             </form>
+
           </div>
         </div>
         

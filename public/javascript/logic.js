@@ -10,7 +10,6 @@ $(document).ready(function() {
     window.addEventListener('load', function() {
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
-  
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
@@ -40,8 +39,10 @@ $(document).ready(function() {
           if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+          } else {
+            console.log("validated")
           }
-          
+
           form.classList.add('was-validated');
         }, false);
       });
@@ -142,4 +143,12 @@ $("#quantity").on("change", function() {
     const quantity = Number($(this).val());
     let total = quantity * 12;
     $("#total").html(total);
+})
+
+$("#same-address").on("change", function() {
+    if ($(this).prop("checked")) {
+        $("#billing-address").addClass("d-none")
+    } else {
+        $("#billing-address").removeClass("d-none")
+    }
 })
