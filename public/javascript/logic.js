@@ -13,17 +13,32 @@ $(document).ready(function() {
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
+          const billingAddress = $("#same-address").prop("checked");
           const firstName = $("#firstName").val().trim();
           const lastName = $("#lastName").val().trim();
           const fullName = firstName + lastName;
           const address1 = $("#address1").val().trim();
+          const baFirstName = $("#ba-firstName").val().trim();
+          const baLastName = $("#ba-lastName").val().trim();
+          const baFullName = baFirstName + baLastName;
+          const baAddress1 = $("#ba-address1").val().trim();
           if (fullName.length > 30) {
             document.getElementById("firstName").setCustomValidity('Your combined first/last name cannot be greater than 30 characters.');
             document.getElementById("lastName").setCustomValidity('Your combined first/last name cannot be greater than 30 characters');
             $("#firstName-invalid-feedback").text("Your combined first/last name cannot be greater than 30 characters");
             $("#lastName-invalid-feedback").text("Your combined first/last name cannot be greater than 30 characters");
+          } else {
+            document.getElementById("firstName").setCustomValidity('');
+            document.getElementById("lastName").setCustomValidity('');
+            $("#firstName-invalid-feedback").text("This field is required.");
+            $("#lastName-invalid-feedback").text("This field is required.");
           }
-          else {
+          if (baFullName.length > 30) {
+            document.getElementById("ba-firstName").setCustomValidity('Your combined first/last name cannot be greater than 30 characters.');
+            document.getElementById("ba-lastName").setCustomValidity('Your combined first/last name cannot be greater than 30 characters');
+            $("#ba-firstName-invalid-feedback").text("Your combined first/last name cannot be greater than 30 characters");
+            $("#ba-lastName-invalid-feedback").text("Your combined first/last name cannot be greater than 30 characters");
+          } else {
             document.getElementById("firstName").setCustomValidity('');
             document.getElementById("lastName").setCustomValidity('');
             $("#firstName-invalid-feedback").text("This field is required.");
@@ -36,14 +51,20 @@ $(document).ready(function() {
               document.getElementById("address1").setCustomValidity('');
               $("#address1-invalid-feedback").text("This field is required");
           }
+          if (baAddress1.length > 30) {
+              document.getElementById("ba-address1").setCustomValidity('Address 1 cannot be greater than 30 characters.');
+              $("#ba-address1-invalid-feedback").text("Address 1 cannot be greater than 30 characters");
+          } else {
+              document.getElementById("address1").setCustomValidity('');
+              $("#ba-address1-invalid-feedback").text("This field is required");
+          }
           if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-          } else {
-            console.log("validated")
           }
 
           form.classList.add('was-validated');
+
         }, false);
       });
     }, false);
