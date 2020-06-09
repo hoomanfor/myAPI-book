@@ -14,13 +14,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- Stripe CSS -->
-  <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/global.css" /> -->
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
-  <!-- Stripe -->
-  <script src="https://js.stripe.com/v3/"></script>
 
   <title>myAPI Book</title>
 </head>
@@ -41,7 +36,7 @@
         <h1>my<span>API</span> book</h1>
       </div>
       <div class="col-12 col-md-3 d-flex align-items-center">
-        <a class="btn btn-primary w-100 pay">Buy the Book Now</a>
+        <a href="/checkout" class="btn btn-primary w-100 pay">Buy the Book Now</a>
       </div>
     </div>
   </header>
@@ -377,10 +372,7 @@
         <button id="pay" class="btn btn-primary" type="button">Pay</button>
       </div>
     </div>
-
-
-
-
+    <!-- Footer -->
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2020 myAPI book</p>
       <ul class="list-inline">

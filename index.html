@@ -1,90 +1,75 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Josefin+Sans:400,700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Stripe CSS -->
-    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
-    <!-- <link rel="stylesheet" href="/css/global.css" /> -->
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
 
-    <title>myAPI Book</title>
-  </head>
-  <body>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Josefin+Sans:400,700&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
 
-    <header class="container px-0 px-md-2">
-      <div class="row text-center no-gutters">
-        <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
-          <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
-          <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="col-12 col-md-6 pt-1">
+  <title>myAPI Book</title>
+</head>
+
+<body>
+
+  <header class="container px-0 px-md-2">
+    <div class="row text-center no-gutters">
+      <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
+        <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
+        <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="col-12 col-md-6 pt-1">
+        <h1>my<span>API</span> book</h1>
+      </div>
+      <div class="col-12 col-md-3 d-flex align-items-center">
+        <a href="/checkout" class="btn btn-primary w-100 pay">Buy the Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid hero">
+    <div class="row">
+      <div class="col-12 col-md-6 text-center text-md-right">
+        <img class="img-fluid" src="/images/3d-book-cover.png" />
+      </div>
+      <div class="col-12 col-md-4 d-flex align-items-center">
+        <div class="heroText text-center w-100 w-md-75">
           <h1>my<span>API</span> book</h1>
-        </div>
-        <div class="col-12 col-md-3 d-flex align-items-center">
-          <a href="/checkout" class="btn btn-primary w-100 pay">Buy the Book Now</a>
+          <p>If you click to Buy myAPI book,<br>you will <a
+              href="https://api.sandbox.lulu.com/docs/#operation/Print-Jobs_create" target="_blank">Create a new
+              Print-Job</a>.<br>Creating a new Print-Job is a<br><code>POST</code> to the <code>/print-jobs/</code>
+            endpoint.</p>
+          <a href="/checkout" class="btn btn-primary pay">Buy the Book Now</a>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
 
-      <div class="container-fluid hero">
-        <div class="row">
-          <div class="col-12 col-md-6 text-center text-md-right">
-            <img class="img-fluid" src="/images/3d-book-cover.png" />
-          </div>
-          <div class="col-12 col-md-4 d-flex align-items-center">
-            <div class="heroText text-center w-100 w-md-75">
-              <h1>my<span>API</span> book</h1>
-              <p>If you click to Buy myAPI book,<br>you will <a href="https://api.sandbox.lulu.com/docs/#operation/Print-Jobs_create" target="_blank" >Create a new Print-Job</a>.<br>Creating a new Print-Job is a<br><code>POST</code> to the <code>/print-jobs/</code> endpoint.</p>
-              <a href="/checkout" class="btn btn-primary pay">Buy the Book Now</a>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col">
-            <div class="sr-root">
-              <div class="sr-main">
-                <form id="payment-form" class="sr-payment-form">
-                  <div class="sr-combo-inputs-row">
-                    <div class="sr-input sr-card-element" id="card-element"></div>
-                  </div>
-                  <div class="sr-field-error" id="card-errors" role="alert"></div>
-                  <button id="submit">
-                    <div class="spinner hidden" id="spinner"></div>
-                    <span id="button-text">Pay</span><span id="order-amount"></span>
-                  </button>
-                </form>
-                <div class="sr-result hidden">
-                  <p>Payment completed<br /></p>
-                  <pre>
-                    <code></code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="/javascript/logic.js"></script>
+</body>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/javascript/logic.js"></script>
-  </body>
 </html>
