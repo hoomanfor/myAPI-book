@@ -1,7 +1,13 @@
 require('dotenv').config();
 const axios = require('axios');
 const express = require('express');
-const stripe = require('stripe')('sk_test_UQj253dJNoxIiCP4mjq2W7Pz00t51pPy3J');
+const fetch = require('node-fetch');
+const Client = require('shopify-buy');
+global.fetch = fetch;
+const client = Client.buildClient({
+	storefrontAccessToken: process.env.ACCESS_TOKEN,
+  	domain: process.env.SHOPIFY_SHOP_DOMAIN
+});
 const app = express();
 const port = 3000;
 
@@ -12,6 +18,12 @@ app.use(express.static('public'));
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
 app.get('/checkout', (req, res) => res.sendFile(__dirname + '/checkout.html'))
+
+app.get('/products', (req, res) => {
+    client.product.fetchAll().then((products) => {
+        res.json(products)
+    })
+})
 
 app.post('/api/access-token', (req, res) => {
     axios({
