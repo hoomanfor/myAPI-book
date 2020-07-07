@@ -36,7 +36,7 @@
         <h1>my<span>API</span> book</h1>
       </div>
       <div class="col-12 col-md-3 d-flex align-items-center">
-        <a href="/checkout" class="btn btn-primary w-100 pay">Buy the Book Now</a>
+        <a href="#" class="btn btn-primary w-100 pay">Add to Cart</a>
       </div>
     </div>
   </header>
@@ -44,16 +44,13 @@
   <div class="container-fluid hero">
     <div class="row">
       <div class="col-12 col-md-6 text-center text-md-right">
-        <img class="img-fluid" src="/images/3d-book-cover.png" />
+        <img id="product-image" class="img-fluid" src="" />
       </div>
       <div class="col-12 col-md-4 d-flex align-items-center">
         <div class="heroText text-center w-100 w-md-75">
-          <h1>my<span>API</span> book</h1>
-          <p>If you click to Buy myAPI book,<br>you will <a
-              href="https://api.sandbox.lulu.com/docs/#operation/Print-Jobs_create" target="_blank">Create a new
-              Print-Job</a>.<br>Creating a new Print-Job is a<br><code>POST</code> to the <code>/print-jobs/</code>
-            endpoint.</p>
-          <a href="/checkout" class="btn btn-primary pay">Buy the Book Now</a>
+          <h1 id="product-title"></h1>
+          <p id="product-description"></p>
+          <a href="#" class="btn btn-primary pay">Add to Cart</a>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     console.log("ready!");
+    fetchProduct()
 
     function setToken() {
         const now = new Date();
@@ -75,6 +76,24 @@ $(document).ready(function () {
         })
     }
 
+    //Get the Product Details from my Shopify Store
+    function fetchProduct() {
+        $.ajax("/products", {
+            method: "GET",
+            error: function(error) {
+                console.log(error)
+            }
+        }).then(function (data) {
+            console.log(data[0]);
+            const productTitle = data[0].title;
+            const productImageURL = data[0].images[0].src;
+            const productDescription = data[0].description;
+            $("#product-title").text(productTitle);
+            $("#product-image").attr("src", productImageURL);
+            $("#product-description").text(productDescription);
+        })
+    }
+
     $("#getPrintJobs").on("click", function () {
         console.log("#getPrintJobs works!");
         const accessToken = setToken();
@@ -117,5 +136,6 @@ $(document).ready(function () {
             $("#billing-address").addClass("needs-validation");
         }
     })
+
 
 });
