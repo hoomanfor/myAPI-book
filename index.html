@@ -22,42 +22,52 @@
 
 <body>
 
-  <header class="container px-0 px-md-2">
-    <div class="row text-center no-gutters">
-      <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
-        <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
-        <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
-      <div class="col-12 col-md-6 pt-1">
-        <h1>myAPI book</h1>
-      </div>
-      <div class="col-12 col-md-3 d-flex align-items-center">
-        <button class="btn btn-primary w-100 toggle-cart">Cart</button>
-      </div>
-    </div>
-  </header>
+  <div id="page-container">
 
-  <div class="container-fluid">
-    <div class="row justify-content-center hero">
-      <div class="col-12 col-md-4 text-center text-md-right">
-        <img id="product-image" class="img-fluid" src="" />
-      </div>
-      <div class="col-12 col-md-4 d-flex align-items-center">
-        <div class="heroText text-center w-100 w-md-75">
-          <h2 id="product-title"></h2>
-          <p id="product-description"></p>
-          <button class="btn btn-primary toggle-cart">Add to Cart</button>
+    <header class="container px-0 px-md-2">
+      <div class="row text-center no-gutters">
+        <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
+          <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
+          <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="col-12 col-md-6 pt-1">
+          <h1>myAPI book</h1>
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-center">
+          <button class="btn btn-primary w-100 toggle-cart">Cart</button>
         </div>
       </div>
-      <div id="cart" class="col-12 col-md-4 bg-light cart">
-        <h3>Cart</h3>
+    </header>
+
+    <main class="container-fluid">
+      <div class="row justify-content-center hero">
+        <div class="col-12 col-md-4 text-center text-md-right">
+          <img id="product-image" class="img-fluid" src="" />
+        </div>
+        <div class="col-12 col-md-4 d-flex align-items-center">
+          <div class="heroText text-center w-100 w-md-75">
+            <h2 id="product-title"></h2>
+            <p id="product-description"></p>
+            <button class="btn btn-primary toggle-cart">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Cart -->
+        <div class="col-12 col-md-4 bg-light cart">
+          <h3>Cart</h3>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <footer class="bg-secondary text-light d-flex align-items-end justify-content-center">
+      <p>Copyright &#169; 2020 | myAPI book | All rights reserved</p>
+    </footer>
+
   </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
