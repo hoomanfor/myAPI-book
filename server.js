@@ -23,7 +23,7 @@ app.get('/products', (req, res) => {
     client.product.fetchAll().then((products) => {
         res.json(products)
     })
-})
+});
 
 app.post('/api/access-token', (req, res) => {
     axios({

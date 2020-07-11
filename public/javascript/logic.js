@@ -137,5 +137,10 @@ $(document).ready(function () {
         }
     })
 
+    $(".toggle-cart").on("click", function() {
+        console.log("this works")
+        $(".cart").toggle();
+    })
+
 
 });

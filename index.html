@@ -33,25 +33,28 @@
         <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="col-12 col-md-6 pt-1">
-        <h1>my<span>API</span> book</h1>
+        <h1>myAPI book</h1>
       </div>
       <div class="col-12 col-md-3 d-flex align-items-center">
-        <a href="#" class="btn btn-primary w-100 pay">Add to Cart</a>
+        <button class="btn btn-primary w-100 toggle-cart">Cart</button>
       </div>
     </div>
   </header>
 
-  <div class="container-fluid hero">
-    <div class="row">
-      <div class="col-12 col-md-6 text-center text-md-right">
+  <div class="container-fluid">
+    <div class="row justify-content-center hero">
+      <div class="col-12 col-md-4 text-center text-md-right">
         <img id="product-image" class="img-fluid" src="" />
       </div>
       <div class="col-12 col-md-4 d-flex align-items-center">
         <div class="heroText text-center w-100 w-md-75">
-          <h1 id="product-title"></h1>
+          <h2 id="product-title"></h2>
           <p id="product-description"></p>
-          <a href="#" class="btn btn-primary pay">Add to Cart</a>
+          <button class="btn btn-primary toggle-cart">Add to Cart</button>
         </div>
+      </div>
+      <div id="cart" class="col-12 col-md-4 bg-light cart">
+        <h3>Cart</h3>
       </div>
     </div>
   </div>
