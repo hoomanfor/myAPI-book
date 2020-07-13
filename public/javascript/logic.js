@@ -1,5 +1,9 @@
 $(document).ready(function () {
     console.log("ready!");
+    let shopifyProductData;
+    let productTitle;
+    let productImageURL;
+    let productDescription;
     fetchProduct()
 
     function setToken() {
@@ -84,10 +88,11 @@ $(document).ready(function () {
                 console.log(error)
             }
         }).then(function (data) {
-            console.log(data[0]);
-            const productTitle = data[0].title;
-            const productImageURL = data[0].images[0].src;
-            const productDescription = data[0].description;
+            shopifyProductData = data[0];
+            console.log(shopifyProductData);
+            productTitle = shopifyProductData.title;
+            productImageURL = shopifyProductData.images[0].src;
+            productDescription = shopifyProductData.description;
             $("#product-title").text(productTitle);
             $("#product-image").attr("src", productImageURL);
             $("#product-description").text(productDescription);
@@ -125,7 +130,7 @@ $(document).ready(function () {
         })
     })
 
-    // Show or Hide the Billing Address at checkout.
+    // Show/Hide the Billing Address at checkout.
     $("#same-address").on("change", function() {
         if ($(this).prop("checked")) {
             $("#billing-address").addClass("d-none");
@@ -137,6 +142,7 @@ $(document).ready(function () {
         }
     })
 
+    // Show/Hide the Sidebar Cart
     $(".toggle-cart").on("click", function() {
         console.log("this works")
         $(".cart").toggle();
