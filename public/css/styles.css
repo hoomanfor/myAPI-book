@@ -39,7 +39,7 @@ h1, h2, h3, h4 {
 }
 
 .social i {
-    padding-right: .50rem;
+    padding-right: .25rem;
     color: black;
 }
 
@@ -62,7 +62,8 @@ img.img-fluid {
 }
 
 .cart {
-    display: none;
+    /* display: none; */
+    background: white;
     color: black;
 }
 
@@ -79,7 +80,9 @@ img.img-fluid {
 
 .cart .quantity {
     max-width: 40px;
+    padding: 0;
 }
+
 
 footer {
     position: absolute;

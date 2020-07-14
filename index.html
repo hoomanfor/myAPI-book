@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     crossorigin="anonymous">
@@ -17,14 +18,14 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/styles.css">
 
-  <title>myAPI Book</title>
+  <title>myAPI book</title>
 </head>
 
 <body>
 
     <nav class="container-fluid">
       <div class="row no-gutters">
-        <div class="col-3 d-none d-md-flex justify-content-center align-items-center social">
+        <div class="col-3 d-none d-md-block text-center align-self-center social">
           <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
           <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -32,10 +33,10 @@
           <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
           <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
-        <div class="col-11 col-md-6 d-flex justify-content-center align-items-center">
+        <div class="col-11 col-md-6 text-center">
           <h1>myAPI book</h1>
         </div>
-        <div class="col-1 col-md-3 d-flex justify-content-center align-items-center">
+        <div class="col-1 col-md-3 text-center align-self-center">
           <button class="btn btn-primary toggle-cart">Cart</button>
         </div>
       </div>
@@ -46,7 +47,7 @@
         <div class="col-12 col-md-4 text-center text-md-right">
           <img id="product-image" class="img-fluid" src="" />
         </div>
-        <div class="col-12 col-md-4 d-flex align-items-center">
+        <div class="col-12 col-md-4 align-self-center">
           <div class="heroText text-center">
             <h2 id="product-title"></h2>
             <p id="product-description"></p>
@@ -54,36 +55,39 @@
           </div>
         </div>
         <!-- Cart -->
-        <div class="col-12 col-md-4 px-0 bg-light border cart">
+        <div class="col-12 col-md-4 cart">
           <!-- Cart Header -->
-          <header class="d-flex justify-content-between align-items-center p-2 border-bottom">
+          <div class="row border">
+            <div class="col align-self-center">
               <h3>Cart</h3>
+            </div>
+            <div class="col text-right">
               <button class="btn btn-danger">X</button>
-          </header>
+            </div>
+          </div>
           <!-- Cart Line-Item -->
-          <div class="d-flex justify-content-between p-2">
-            <div class="d-flex">
-              <!-- Column 1 -->
+          <div class="row border">
+            <div class="col-3">
               <img class="lineItemThumbnail" id="lineItemThumbnail" src="/images/3d-book-cover.png">
-              <div class="d-flex-column border">
-                <span>myAPI book<span>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary decrementQuantity" type="button">-</button>
-                  </div>
-                    <input type="number" class="form-control text-center quantity" placeholder="" value="1">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary incrementQuantity" type="button">+</button>
-                  </div>
+            </div>
+            <div class="col align-self-center">
+              <span>myAPI book</span>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary decrementQuantity" type="button">-</button>
+                </div>
+                  <input type="number" class="form-control text-center quantity" placeholder="" value="1">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary incrementQuantity" type="button">+</button>
                 </div>
               </div>
             </div>
-            <!-- Column 2 -->
-            <div class="align-self-center">
+            <div class="col text-right align-self-center">
               <span>$10.00</span>
               <button class="btn btn-danger">X</button>
             </div>
           </div>
+          <!-- Test -->
         </div>
       </div>
     </main>
