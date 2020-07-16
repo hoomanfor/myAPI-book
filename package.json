@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoomanfor/learn-lulu-api.git"
+    "url": "git+https://github.com/hoomanfor/myAPI-book.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hoomanfor/learn-lulu-api/issues"
+    "url": "https://github.com/hoomanfor/myAPI-book/issues"
   },
-  "homepage": "https://github.com/hoomanfor/learn-lulu-api#readme",
+  "homepage": "https://github.com/hoomanfor/myAPI-book#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
