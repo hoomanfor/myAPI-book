@@ -145,7 +145,7 @@ $(document).ready(function () {
     // Show/Hide the Sidebar Cart
     $(".toggle-cart").on("click", function() {
         console.log("this works")
-        $(".cart").toggle();
+        $("#cart").toggle();
     })
 
 

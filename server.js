@@ -9,15 +9,13 @@ const client = Client.buildClient({
   	domain: process.env.SHOPIFY_SHOP_DOMAIN
 });
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
-
-app.get('/checkout', (req, res) => res.sendFile(__dirname + '/checkout.html'))
 
 app.get('/products', (req, res) => {
     client.product.fetchAll().then((products) => {
