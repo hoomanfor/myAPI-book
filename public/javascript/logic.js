@@ -99,6 +99,7 @@ $(document).ready(function () {
         })
     }
 
+    // Get a list of my Print Jobs from the Lulu Print API
     $("#getPrintJobs").on("click", function () {
         console.log("#getPrintJobs works!");
         const accessToken = setToken();
@@ -115,38 +116,10 @@ $(document).ready(function () {
         })
     });
 
-    // Calculate the total in the shopping cart.
-    $("#quantity").on("change", function () {
-        const quantity = Number($(this).val());
-        let total = quantity * 12;
-        $("#total").html(total);
-    })
-
-    // Validate the shipping address and/or billing address.
-    $("#pay").on("click", function(event) {
-        const forms = $(".needs-validation");
-        forms.each(function(index, form) {
-            $(form).addClass("was-validated");
-        })
-    })
-
-    // Show/Hide the Billing Address at checkout.
-    $("#same-address").on("change", function() {
-        if ($(this).prop("checked")) {
-            $("#billing-address").addClass("d-none");
-            $("#billing-address").removeClass("needs-validation");
-            $("#billing-address").removeClass("was-validated");
-        } else {
-            $("#billing-address").removeClass("d-none");
-            $("#billing-address").addClass("needs-validation");
-        }
-    })
-
     // Show/Hide the Sidebar Cart
     $(".toggle-cart").on("click", function() {
         console.log("this works")
-        $("#cart").toggle();
+        $(".cart").toggleClass("showCart");
     })
-
 
 });
