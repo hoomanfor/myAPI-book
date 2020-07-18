@@ -13,20 +13,15 @@ input[type=number] {
 body {
     font-size: 16px;
     font-family: 'Josefin Sans', sans-serif;
-    min-height: 100vh; 
-    position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.2)), url("/images/brett-zeck-eyfMgGvo9PA-unsplash-xl.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 nav {
-    background: white;
-}
-
-main {
-    padding-bottom: 5rem;
+    color: white;
 }
 
 h1, h2, h3, h4 {
@@ -40,12 +35,12 @@ h1, h2, h3, h4 {
 
 .social i {
     padding-right: .25rem;
-    color: black;
+    color: white;
 }
 
 .social i:hover,
 .social i:focus {
-    color: rgba(0, 0, 0, .6);
+    color: rgba(255, 255, 255, .6);
 }
 
 .hero {
@@ -67,7 +62,28 @@ img.img-fluid {
 
 .cart {
     background: white;
+    display: flex;
+    flex-direction: column;
     color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 365px;
+    padding: 0;
+    z-index: 9999;
+}
+
+.cart .cartHeader {
+    padding: .50rem;
+}
+
+.cart .lineItems {
+    flex: 1 0 auto;
+}
+
+.cart .lineItem {
+    padding: .50rem;
 }
 
 .cart .lineItemThumbnail {
@@ -86,9 +102,8 @@ img.img-fluid {
     padding: 0;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
+.cart .cartFooter {
+    padding: .50rem;
 }
+
+

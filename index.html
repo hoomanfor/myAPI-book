@@ -25,7 +25,7 @@
 
     <nav class="container-fluid">
       <div class="row text-center align-items-center">
-        <div class="col-4 d-none d-md-block social border">
+        <div class="col-4 d-none d-md-block social">
           <a href="https://github.com/hoomanfor" target="_blank"><i class="fab fa-github-alt"></i></a>
           <a href="https://www.linkedin.com/in/hoomanfor" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -33,16 +33,20 @@
           <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
           <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
-        <div class="col-9 col-md-4 border">
+        <div class="col-9 col-md-4">
           <h1>myAPI book</h1>
         </div>
-        <div class="col-3 col-md-4 border">
+        <div class="col-3 col-md-4">
           <button class="btn btn-primary toggle-cart">Cart</button>
         </div>
       </div>
     </nav>
 
+
+
+      
     <main class="container-fluid">
+
       <div class="row justify-content-center hero">
         <div class="col-12 col-md-4 text-center text-md-right">
           <img id="product-image" class="img-fluid" src="" />
@@ -54,82 +58,88 @@
             <button class="btn btn-primary h-100 toggle-cart">Add to Cart</button>
           </div>
         </div>
-        <!-- Cart -->
-        <div id="cart" class="col-12 col-md-4 px-0">
-
-          <div class="cart">
-
-            <!-- Cart Header -->
-            <div class="row no-gutters border">
-              <div class="col align-self-center">
-                <h3>Cart</h3>
-              </div>
-              <div class="col text-right">
-                <button class="btn btn-danger">X</button>
-              </div>
-            </div>
-            <!-- Cart Line-Item -->
-            <div class="row no-gutters border">
-              <div class="col-3">
-                <img class="lineItemThumbnail" id="lineItemThumbnail" src="/images/3d-book-cover.png">
-              </div>
-              <div class="col align-self-center">
-                <span>myAPI book</span>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary decrementQuantity" type="button">-</button>
-                  </div>
-                    <input type="number" class="form-control text-center quantity" placeholder="" value="1">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary incrementQuantity" type="button">+</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col text-right align-self-center">
-                <span>$10.00</span>
-                <button class="btn btn-danger">X</button>
-              </div>
-            </div>
-            <!-- Cart Subtotal / Taxes / Total / Checkout Button -->
-            <div class="row no-gutters text-center mt-5 border">
-              <div class="col">
-                <span>SUBTOTAL</span>
-              </div>
-              <div class="col">
-                <span>$10.00</span>
-              </div>
-            </div>
-            <div class="row no-gutters text-center border">
-              <div class="col">
-                <span>TAXES</span>
-              </div>
-              <div class="col">
-                <span>$0.00</span>
-              </div>
-            </div>
-            <div class="row no-gutters text-center border">
-              <div class="col">
-                <span>TOTAL</span>
-              </div>
-              <div class="col">
-                <span>$10.00</span>
-              </div>
-            </div>
-            <div class="row no-gutters text-center border">
-              <div class="col">
-                <button class="btn btn-primary w-100">Checkout</button>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
       </div>
+
     </main>
 
-    <footer class="bg-secondary text-light d-flex align-items-end justify-content-center">
-      <p>Copyright &#169; 2020 | myAPI book | All rights reserved</p>
-    </footer>
+    <!-- Cart -->
+    <div class="container cart">
+      <!-- Cart Header -->
+      <div class="cartHeader border-bottom">
+          
+          <div class="row">
+            <div class="col align-self-center">
+              <h3>Cart</h3>
+            </div>
+            <div class="col text-right">
+                <button class="btn btn-danger">X</button>
+            </div>
+          </div>
+
+      </div>
+      <!-- Cart Body -->
+      <div class="lineItems" >
+      
+        <div class="row lineItem no-gutters">
+          <div class="col-4">
+            <img class="lineItemThumbnail" id="lineItemThumbnail" src="/images/3d-book-cover.png">
+          </div>
+          <div class="col align-self-center">
+            <span>myAPI book</span>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary decrementQuantity" type="button">-</button>
+              </div>
+              <input type="number" class="form-control text-center quantity" placeholder="" value="1">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary incrementQuantity" type="button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="col text-right align-self-center">
+            <span>$10.00</span>
+            <button class="btn btn-danger">X</button>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Cart Footer -->
+      <div class="cartFooter border-top">
+
+        <div class="row text-center">
+          <div class="col">
+            <span>SUBTOTAL</span>
+          </div>
+          <div class="col">
+            <span>$10.00</span>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col">
+            <span>TAXES</span>
+          </div>
+          <div class="col">
+            <span>$0.00</span>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col">
+            <span>TOTAL</span>
+          </div>
+          <div class="col">
+            <span>$10.00</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-primary w-100">Checkout</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
